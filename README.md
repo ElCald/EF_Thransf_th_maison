@@ -1,5 +1,7 @@
 # Projet conductivité thermique d'une maison
 
+*Collaborator : [clem1408](https://github.com/clem1408)*
+
 ## Configurations différentes
 | Couleur toiture | Alpha | uS (°C) | f |
 |-|-|-|-|
