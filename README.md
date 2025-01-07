@@ -27,7 +27,7 @@ Le pas et la qualité du maillage sont très corrects, il n’y a pas de triangl
 - h=0.3092164366780396
 - Q=1.8225720390498603
 
-## Résultat
+## Résultats
 ### Toiture blanche
 ![image](/images/toit_blanc.png)
 - Température max : 47.61861966878903
