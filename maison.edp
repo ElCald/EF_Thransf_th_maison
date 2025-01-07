@@ -1,0 +1,39 @@
+// fichier maison.ffem (FreeFem++)
+// =================================================
+// maillage non structuré d’une equerre:
+// =================================================
+
+//Dimensions
+real L=1.0, l=0.5;
+
+int Neu = 2, Dir = 1, Sol = 3;
+int nb = 5; //Nombre de sommets par bord
+
+//Sommets caractéristiques des bords
+
+
+real x0=0.0, y0=0.0;
+real x1=L, y1=y0;
+real x2=L, y2=l*2;
+real x3=L/2, y3=l*3;
+real x4=x0, y4=l*2;
+real x5=x0, y5=y0;
+
+
+
+
+//parametrage des bords
+border b0(t=0,1){x=x0+t*(x1-x0);y=y0+t*(y1-y0);label=Sol;};
+border b1(t=0,1){x=x1+t*(x2-x1);y=y1+t*(y2-y1);label=Neu;};
+border b2(t=0,1){x=x2+t*(x3-x2);y=y2+t*(y3-y2);label=Dir;};
+border b3(t=0,1){x=x3+t*(x4-x3);y=y3+t*(y4-y3);label=Dir;};
+border b4(t=0,1){x=x4+t*(x5-x4);y=y4+t*(y5-y4);label=Neu;};
+
+
+
+
+mesh Th = buildmesh(b0(nb) + b1(nb) + b2(nb) + b3(nb) + b4(nb));
+// Th = plot(b1(3) + b2(2) + b3(4) + b4(3) + b5(6));
+
+plot(Th);
+savemesh(Th, "maison.msh");
